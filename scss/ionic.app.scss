@@ -19,6 +19,7 @@ $balanced:                        #34495E !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
@@ -66,7 +67,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	}
 }
 
-
 //dashboard
 .dashboardDiv {
 	.section {
@@ -77,7 +77,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 		color: gray;
 	}
 }
-
 
 //login page
 .loginDiv {
