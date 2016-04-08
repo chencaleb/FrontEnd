@@ -9,7 +9,7 @@ angular.module('household.controller', ['ionic'])
 
 	function getHouseholds() {
 		$http
-			.get('http://localhost:3000/api/households')
+			.get('https://sleepy-ravine-82788.herokuapp.com/api/households')
 			.then(function(res) {
 					res.data.houses.forEach(function(house){
 						$scope.households.push(house);
@@ -32,7 +32,7 @@ angular.module('household.controller', ['ionic'])
 		};
 
 		$http
-			.post('http://localhost:3000/api/households', newHouse)
+			.post('https://sleepy-ravine-82788.herokuapp.com/api/households', newHouse)
 			.then(function(res) {
 				console.log(newHouse);
   				getHouseholds();
@@ -48,7 +48,7 @@ angular.module('household.controller', ['ionic'])
 			};
 
 		$http
-			.post('http://localhost:3000/api/houseuser', houseAndUserId)
+			.post('https://sleepy-ravine-82788.herokuapp.com/api/houseuser', houseAndUserId)
 			.then(function(res) {
 				console.log(houseAndUserId);
 				AuthService.storeUserCredentials(res.data.token);

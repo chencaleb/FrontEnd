@@ -12,7 +12,7 @@ angular.module('announcement.controller', ['ionic'])
 
   function getAnnouncements() {
      $http
-      .get('http://localhost:3000/api/households/' + payload.households[0] + '/announcements')
+      .get('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/announcements')
       .then(function(res){
         console.log("HEREEEEE", payload);
 				$scope.announcements = res.data.announcements;
@@ -39,7 +39,7 @@ angular.module('announcement.controller', ['ionic'])
 
 		// add the announcement to the house model
     $http
-      .post('http://localhost:3000/api/households/' + payload.households[0] + '/announcements', announcement)
+      .post('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/announcements', announcement)
       .then(function(res) {
         console.log('added new announcement:', announcement);
         getAnnouncements();
@@ -53,7 +53,7 @@ angular.module('announcement.controller', ['ionic'])
     // if current user is the one who made the announcement, they can delete it
     if (payload._id == announcement.userId) {      
       $http
-        .delete('http://localhost:3000/api/households/' + payload.households[0] + '/announcements/' + announcement._id)
+        .delete('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/announcements/' + announcement._id)
         .then(function(res) {
           console.log('Announcement deleted');
           getAnnouncements();

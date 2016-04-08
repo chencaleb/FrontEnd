@@ -10,7 +10,7 @@ angular.module('chore.controller', ['ionic'])
   // get all chores
   function getChores() {
   	$http
-  		.get('http://localhost:3000/api/households/' + payload.households[0] + '/chores')
+  		.get('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/chores')
   		.then(function(res){
         // console.log(res.data.chores);
         $scope.chores = (res.data.chores);
@@ -40,7 +40,7 @@ angular.module('chore.controller', ['ionic'])
 
       // add the chore to the house model
       $http
-        .post('http://localhost:3000/api/households/' + payload.households[0] + '/chores', chore)
+        .post('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/chores', chore)
         .then(function(res) {
           console.log('added new chore:', chore);
           getChores();
@@ -63,7 +63,7 @@ angular.module('chore.controller', ['ionic'])
 
     // save new chore object in database
     $http
-      .put('http://localhost:3000/api/households/' + payload.households[0] + '/chores/' + chore._id, choreInfo)
+      .put('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/chores/' + chore._id, choreInfo)
       .then(function(res) {
         console.log('edited chore upvotes');
         getChores();
@@ -95,7 +95,7 @@ angular.module('chore.controller', ['ionic'])
 
     // make call to backend to reset chore details
     $http
-      .put('http://localhost:3000/api/households/' + payload.households[0] + '/chores/' + chore._id, resetChore)
+      .put('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/chores/' + chore._id, resetChore)
       .then(function(res) {
         console.log('reset chore details');
         getChores();
@@ -104,7 +104,7 @@ angular.module('chore.controller', ['ionic'])
 
     // make call to backend to archive completed chore (for dashboard and data visualization)
     $http
-      .post('http://localhost:3000/api/households/' + payload.households[0] + '/completedChores/', archivedChore)
+      .post('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/completedChores/', archivedChore)
       .then(function(res) {
         console.log('Archived the chore');
       });
@@ -114,7 +114,7 @@ angular.module('chore.controller', ['ionic'])
   $scope.deleteChore = function (chore) {
     console.log('we will delete this chore');
     $http
-      .delete('http://localhost:3000/api/households/' + payload.households[0] + '/chores/' + chore._id)
+      .delete('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/chores/' + chore._id)
       .then(function(res) {
         console.log('Chore deleted', res);
         getChores();
@@ -132,7 +132,7 @@ angular.module('chore.controller', ['ionic'])
     };
 
     $http
-      .put('http://localhost:3000/api/households/' + payload.households[0] + '/chores/' + chore._id, comment)
+      .put('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/chores/' + chore._id, comment)
       .then(function(res) {
         getChores();
         chore.comments.push(comment);

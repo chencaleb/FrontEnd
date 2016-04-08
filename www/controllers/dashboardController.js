@@ -12,7 +12,7 @@ angular.module('dashboard.controller', ['angularMoment'])
   // this will get all of the data stored in the household to append to the page
   function getHouseholds() {
     $http
-      .get('http://localhost:3000/api/households/' + payload.households[0])
+      .get('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0])
       .then(function(res) {
 
         var house = res.data.house;

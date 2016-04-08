@@ -9,7 +9,7 @@ angular.module('supply.controller', ['ionic'])
 
   function getSupplies() {
     $http
-      .get('http://localhost:3000/api/households/' + payload.households[0] + '/supplies')
+      .get('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/supplies')
       .then(function(res){
         console.log("get supplies", res.data.supplies);
           $scope.supplies = (res.data.supplies);
@@ -31,7 +31,7 @@ angular.module('supply.controller', ['ionic'])
       newSupply.item = '';
 
       $http
-        .post('http://localhost:3000/api/households/' + payload.households[0] + '/supplies', supply)
+        .post('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/supplies', supply)
         .then(function(res) {
           console.log('added new supply:', supply);
           getSupplies();
@@ -44,7 +44,7 @@ angular.module('supply.controller', ['ionic'])
     console.log(supply);
     console.log('we will delete this supply');
     $http
-      .delete('http://localhost:3000/api/households/' + payload.households[0] + '/supplies/' + supply._id)
+      .delete('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/supplies/' + supply._id)
       .then(function(res) {
         console.log('Supply deleted');
         getSupplies();
