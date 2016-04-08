@@ -9,12 +9,12 @@ angular.module('chore.controller', ['ionic'])
 
   // get all chores
   function getChores() {
-  	$http
-  		.get('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/chores')
-  		.then(function(res){
+    $http
+      .get('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/chores')
+      .then(function(res){
         // console.log(res.data.chores);
         $scope.chores = (res.data.chores);
-  		});
+      });
   }
 
 
@@ -32,7 +32,7 @@ angular.module('chore.controller', ['ionic'])
         task: newChore.task,
         completedAt: new Date(),
         upvotes: 0,
-        completedBy: payload.name
+        addedBy: payload.name
       };
 
       // reset chore form to empty

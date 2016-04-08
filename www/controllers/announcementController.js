@@ -4,22 +4,17 @@ angular.module('announcement.controller', ['ionic'])
 
 	var self = this;
   self.all = [];
-  console.log("HEREEEEE", payload);
   var payload = AuthService.jwtToJSON();
   getAnnouncements();
-  $scope.isClicked = false;
 
 
   function getAnnouncements() {
      $http
       .get('https://sleepy-ravine-82788.herokuapp.com/api/households/' + payload.households[0] + '/announcements')
       .then(function(res){
-        console.log("HEREEEEE", payload);
 				$scope.announcements = res.data.announcements;
   		});
 	}
-
-
 
 	$scope.createAnnouncement = function(newAnnouncement) {
     if (!newAnnouncement) {
@@ -61,9 +56,7 @@ angular.module('announcement.controller', ['ionic'])
     } else {
       return;
     }
-
   };
-
 
 	// New Announcement Modal Functions
   // Creates and loads the new announcement modal
@@ -96,11 +89,5 @@ angular.module('announcement.controller', ['ionic'])
       console.log('redirected user back to new announcement form');
     });
   };
-
-
-  $scope.onSwipeLeft = function() {
-    console.log('WHAT THE FUCK');
-  };
-
   
 });
