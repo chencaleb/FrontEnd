@@ -14,8 +14,11 @@ $dark:                            #444 !default;
 */
 
 $calm:                            #ECF0F1 !default;
-$balanced:                        #34495E !default;
-
+$balanced:                        #202020 !default;
+$chores: #1c5f83;
+$announcements: #ff7a06;
+$bills: #ba1d1e;
+$supplies: green;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
@@ -96,4 +99,35 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	
 }
 
+.bar-footer {
+	height: 60px;
+	background-position: 0;
+}
+#logout-bar {
+	background-color: white;	
+}
 
+// .announcements_color {
+// 	color: $announcements !important;
+// }
+// #announcements_icon {
+// 	color: $announcements;
+// }
+// .bills_color {
+// 	color: $bills;
+// }
+// #bills_icon {
+// 	color: $bills;
+// }
+// .chores_color {
+// 	color: $chores;
+// }
+// #chores_icon {
+// 	color: $chores;	
+// }
+// .supplies_color {
+// 	color: $supplies;
+// }
+// #supplies_icon {
+// 	color: $supplies;
+// }

@@ -11,9 +11,7 @@ angular.module('household.controller', ['ionic'])
 		$http
 			.get('https://sleepy-ravine-82788.herokuapp.com/api/households')
 			.then(function(res) {
-					res.data.houses.forEach(function(house){
-						$scope.households.push(house);
-					});
+				$scope.households = res.data.houses;
 			});
 	}
 

@@ -41,16 +41,16 @@ angular.module('dashboard.controller', ['angularMoment'])
 
         // organizes the dashboard so that the newest content is on the top
         var organizedDashboard = $scope.dashboardContent.sort(function(a, b) {
-          if ((a.completedAt || a.createdAt || a.createAt || a.purchasedOn) > (b.completedAt || b.createdAt || b.createAt || b.purchasedOn)) {
+          if ((a.completedAt || a.createdAt || a.purchasedOn) < (b.completedAt || b.createdAt || b.createAt || b.purchasedOn)) {
             return -1;
-          } else {
+          }
+          if ((a.completedAt || a.createdAt || a.purchasedOn) > (b.completedAt || b.createdAt || b.createAt || b.purchasedOn)) {
             return 1;
           }
+          return 0;
         });
 
-        $scope.dashboardContent = organizedDashboard;
-
-
+        $scope.dashboardContent = organizedDashboard.reverse();
       });
     }
 });

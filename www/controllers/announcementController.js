@@ -58,6 +58,14 @@ angular.module('announcement.controller', ['ionic'])
     }
   };
 
+  $scope.isUser = function (announcement) {
+    if (payload._id == announcement.userId) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  
 	// New Announcement Modal Functions
   // Creates and loads the new announcement modal
   $ionicModal.fromTemplateUrl('new-announcement.html', function(modal) {

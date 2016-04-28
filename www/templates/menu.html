@@ -20,32 +20,32 @@
       <ion-list>    
 
         <ion-item class="item item-icon-left sideMenu">
-          {{payload.name}}<i class="icon ion-person"></i>
+          {{payload.name}}<i class="icon ion-person" id="avatar_icon"></i>
         </ion-item>
 
         <ion-item class="item item-icon-right" menu-close href="#/app/dashboard">
-          Dashboard<i class="icon ion-ios-home"></i>
+          News Feed<i class="icon ion-ios-home"></i>
         </ion-item>
 
         <ion-item class="item item-icon-right" menu-close href="#/app/chores">
-          Chores<i class="icon ion-settings"></i>
+          Chores<i class="icon ion-settings chores-color" id="chores_icon"></i>
         </ion-item>
 
         <ion-item class="item item-icon-right" menu-close href="#/app/bills">
-          Bills<i class="icon ion-card"></i>
+          Bills<i class="icon ion-card bills-color" id="bills_icon"></i>
         </ion-item>
 
         <ion-item class="item item-icon-right" menu-close href="#/app/supplies">
-          Supplies<i class="icon ion-ios-cart"></i>
+          Supplies<i class="icon ion-ios-cart supplies-color" id="supplies_icon"></i>
         </ion-item>
 
         <ion-item class="item item-icon-right" menu-close href="#/app/announcements">
-          Announcements<i class="icon ion-speakerphone"></i>
+          Announcements<i class="icon ion-speakerphone announcements-color" id="announcements_icon"></i>
         </ion-item>
       </ion-list>
     </ion-content>
 
-    <ion-footer-bar class="bar-calm">
+    <ion-footer-bar class="bar-calm" id="logout-bar">
       <ion-item class="item item-icon-left" nav-clear menu-close ng-click="logout()" style="left:0;right:0;margin:0; width: 100%; position: fixed;">Logout<i class="icon ion-log-out"></i> </ion-item>
     </ion-footer-bar>
 
